@@ -1,9 +1,8 @@
 import { Course } from './course.model';
-import { Major } from './major.model';
-export class University {
+
+export class Major {
   id: string;
   name: string;
   code: string;
-  majors: Major[];
   courses: Course[];
 }
