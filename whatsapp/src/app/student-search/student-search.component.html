@@ -1,18 +1,14 @@
-<input
-  type="text"
-  name=""
-  placeholder="search by university, major, course"
-  id=""
-/>
+<input type="text" name="" placeholder="Find your university" id="" />
 
-<ul *ngFor="let major of majors">
+<!-- <ul *ngFor="let major of majors">
+    
   <div (click)="major.shown = !major.shown" class="list-header">
     <mat-icon aria-hidden="false">{{ getIconName(major) }}</mat-icon>
-    <div>{{ major.name }}</div>
+    <div>{{ major.name }} ({{ major.code }})</div>
   </div>
   <div *ngIf="major.shown" class="list-items">
-    <li *ngFor="let group of major.courses">
+    <li *ngFor="let course of major.courses">
       {{ group.course }}
     </li>
   </div>
-</ul>
+</ul> -->
