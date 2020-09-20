@@ -6,4 +6,12 @@ export class University {
   code: string;
   majors: Major[];
   courses: Course[];
+
+  constructor(uni: any) {
+    this.id = uni.id;
+    this.name = uni.name;
+    this.code = uni.code;
+    this.majors = uni.majors;
+    this.courses = uni.courses.map((course) => new Course(course));
+  }
 }

@@ -1,4 +1,7 @@
+import { Group, Type } from './../models/group.model';
+import { Major } from './../models/major.model';
 import { Component, OnInit } from '@angular/core';
+import { Course } from '../models/course.model';
 
 @Component({
   selector: 'app-student-search',
@@ -6,72 +9,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-search.component.scss'],
 })
 export class StudentSearchComponent implements OnInit {
-  majors = [
+  majors: Major[] = [
     {
       shown: true,
-      id: 1,
-      name: 'SWE',
+      id: '1',
+      name: 'Software Engineering',
+      code: 'SWE',
 
       courses: [
-        {
-          id: 1,
-          link: 'www.link.com',
-          course: 'ICS201',
-        },
-        {
-          id: 2,
-          link: 'www.link2.com',
-          course: 'ICS301',
-        },
-        {
-          id: 1,
-          link: 'www.link3.com',
-          course: 'ICS222',
-        },
-      ],
-    },
-    {
-      id: 1,
-      name: 'ICS',
-      shown: true,
-
-      courses: [
-        {
-          id: 1,
-          link: 'www.link.com',
-          course: 'ICS201',
-        },
-        {
-          id: 2,
-          link: 'www.link2.com',
-          course: 'ICS301',
-        },
-        {
-          id: 1,
-          link: 'www.link3.com',
-          course: 'ICS222',
-        },
+        new Course({
+          id: '1',
+          name: 'Intro to programming',
+          code: 'ICS201',
+          groups: new Group({
+            id: '1',
+            name: 'ICS201 Group',
+            description: 'blah blah',
+            type: Type.Whatsapp,
+            url: 'test.com',
+          }),
+        }),
+        new Course({
+          id: '1',
+          name: 'Intro to programming',
+          code: 'ICS201',
+        }),
+        new Course({
+          id: '1',
+          name: 'Intro to programming',
+          code: 'ICS201',
+        }),
       ],
     },
   ];
 
-  groups = [
-    {
-      id: 1,
-      link: 'www.link.com',
-      course: 'ICS201',
-    },
-    {
-      id: 2,
-      link: 'www.link2.com',
-      course: 'ICS301',
-    },
-    {
-      id: 1,
-      link: 'www.link3.com',
-      course: 'ICS222',
-    },
-  ];
   constructor() {}
 
   ngOnInit(): void {}
